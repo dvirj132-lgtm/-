@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיק עבודות - צילום מקצועי</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #1a1a1a; color: white; }
+        header { height: 80vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=1000') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-size: 4rem; margin-bottom: 10px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; padding: 40px; }
+        .gallery img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; cursor: pointer; }
+        .gallery img:hover { transform: scale(1.03); }
+        .contact { padding: 60px; text-align: center; background-color: #222; }
+        .btn { background-color: white; color: black; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; }
+        footer { padding: 20px; text-align: center; font-size: 0.9rem; color: #777; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[השם שלך]</h1>
+        <p>לוכד רגעים. יוצר סיפורים. צלם [המומחיות שלך].</p>
+        <br>
+        <a href="#contact" class="btn">דברו איתי</a>
+    </header>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1542038783-0ad13aa9594a?auto=format&fit=crop&q=80&w=600" alt="Work 1">
+        <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&q=80&w=600" alt="Work 2">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600" alt="Work 3">
+    </div>
+
+    <section id="contact" class="contact">
+        <h2>בואו נצלם משהו מדהים</h2>
+        <p>זמין לפרויקטים חדשים וצילומי חוץ</p>
+        <p>אימייל: yourname@email.com | טלפון: 050-0000000</p>
+    </section>
+
+    <footer>
+        &copy; 2026 כל הזכויות שמורות ל[השם שלך]
+    </footer>
+
+</body>
+</html>
