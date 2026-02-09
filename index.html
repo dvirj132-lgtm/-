@@ -3,44 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>יהונתן דביר - צילום</title>
+    <title>יהונתן דביר צילום - תיק עבודות</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #1a1a1a; color: white; }
-        header { height: 80vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=1000') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        h1 { font-size: 4rem; margin-bottom: 10px; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; padding: 40px; }
-        .gallery img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; cursor: pointer; }
-        .gallery img:hover { transform: scale(1.03); }
-        .contact { padding: 60px; text-align: center; background-color: #222; }
-        .btn { background-color: white; color: black; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; }
-        footer { padding: 20px; text-align: center; font-size: 0.9rem; color: #777; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #1a1a1a; color: white; text-align: center; }
+        header { padding: 80px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=1000') no-repeat center center/cover; }
+        h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        
+        /* עיצוב כפתורי קטגוריות */
+        .filter-buttons { margin: 30px 0; }
+        .filter-btn { background: none; border: 2px solid white; color: white; padding: 10px 25px; cursor: pointer; margin: 5px; transition: 0.3s; font-size: 1rem; }
+        .filter-btn:hover, .filter-btn.active { background: white; color: black; }
+
+        /* עיצוב הגלריה */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .gallery-item { display: none; }
+        .gallery-item.show { display: block; animation: fadeIn 0.5s; }
+        .gallery img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; }
+        .gallery img:hover { transform: scale(1.02); }
+
+        .contact { padding: 80px 20px; background-color: #222; }
+        .btn { background-color: white; color: black; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; }
+        footer { padding: 30px; color: #777; font-size: 0.9rem; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>[יהונתן דביר]</h1>
-        <p>תופס את הרגש והסיפור באירוע [צילום אירועים ומשפחות]</p>
-        <br>
-        <a href="#contact" class="btn">דברו איתי</a>
+        <h1>יהונתן דביר צילום</h1>
+        <p>תופס את הרגע ויוצר סיפורים באירועים, צילומי משפחה וטבע</p>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterSelection('all')">הכל</button>
+            <button class="filter-btn" onclick="filterSelection('events')">אירועים</button>
+            <button class="filter-btn" onclick="filterSelection('family')">משפחות וזוגות</button>
+            <button class="filter-btn" onclick="filterSelection('nature')">טבע ונוף</button>
+        </div>
     </header>
 
     <div class="gallery">
-        <img src="https://drive.google.com/file/d/1j0rKUJ2PP96zxUqm8Wy1LOYS_-zPPJ0G/view?usp=drive_link">
-        <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&q=80&w=600" alt="Work 2">
-        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600" alt="Work 3">
-    </div>
+        <div class="gallery-item events">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600" alt="אירועים">
+        </div>
+        <div class="gallery-item family">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600" alt="משפחה">
+        </div>
+        <div class="gallery-item nature">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600" alt="טבע">
+        </div>
+        </div>
 
     <section id="contact" class="contact">
-        <h2>כשאני מצלם אירוע הדבר הראשון שאני מחפש לצלם זה את הרגע והרגש שבסיטואציה</h2>
-        <p>מוזמנים ליצור קשר לגבי אירוע, צילומי משפה הצעות נישואים וכל רגע אחר שתרצו לתעד</p>
-        <p>אימייל: yonatandvir.photography@gmail.com
- | טלפון: 0555649761</p>
+        <h2>בואו נצלם משהו מדהים ביחד</h2>
+        <p>זמין לצילומי חוץ, אירועים, ופרויקטים אישיים</p>
+        <p>אימייל: yonatandvir.photography@gmail.com</p>
+        <p>טלפון: 055-5649761</p>
+        <a href="https://wa.me/972555649761" class="btn">שלחו לי הודעה בוואטסאפ</a>
     </section>
 
     <footer>
-        &copy; 2026 כל הזכויות שמורות ל[יהונתן דביר]
+        &copy; 2026 כל הזכויות שמורות ליהונתן דביר
     </footer>
+
+    <script>
+        filterSelection("all");
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("gallery-item");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                x[i].classList.remove("show");
+                if (x[i].className.indexOf(c) > -1) x[i].classList.add("show");
+            }
+        }
+
+        var btnContainer = document.querySelector(".filter-buttons");
+        var btns = btnContainer.getElementsByClassName("filter-btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
 
 </body>
 </html>
